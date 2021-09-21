@@ -1,4 +1,5 @@
 header {
+  top: 0;
   position: fixed;
   z-index: 15;
   width: 100vw;
@@ -8,7 +9,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8vh;
 }
 
 .titulo-header {

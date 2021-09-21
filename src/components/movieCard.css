@@ -1,8 +1,18 @@
 .imagem-defalt {
+  position: relative;
+  cursor: pointer;
   flex-shrink: 0;
   height: 350px;
   width: 300px;
   background-size: 100% 100%;
+  transition: .4s ease;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+}
+
+.imagem-defalt:hover {
+  height: 370px;
+  width: 320px;
+  z-index: 5;
 }
 
 .imagem-hiden {

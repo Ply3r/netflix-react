@@ -1,5 +1,6 @@
 .section-container {
   margin-bottom: 5vh;
+  height: 350px;
   display: flex;
   align-items: center;
 }
@@ -39,6 +40,9 @@
 }
 
 .movie-section {
+  height: 100%;
+  display: flex;
+  align-items: center;
   position: relative;
   scroll-behavior: smooth;
   transition: 1s ease;
