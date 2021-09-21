@@ -1,0 +1,10 @@
+.movie-section {
+  width: 100vw;
+  overflow: auto;
+  display: flex;
+}
+
+h2 {
+  margin: 10px;
+  color: white;
+}

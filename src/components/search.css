@@ -1,0 +1,23 @@
+.search-container {
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-container select {
+  color: white;
+  background-color: #141414;
+  margin-right: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.search-container input {
+  background-color: #141414;
+  border-radius: 3px;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+}

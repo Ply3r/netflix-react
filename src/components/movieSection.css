@@ -1,0 +1,46 @@
+.section-container {
+  margin-bottom: 3vh;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  font-size: 4rem;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  text-shadow: 0 0 1em black;
+}
+
+.right {
+  right: 1%;
+}
+
+.left {
+  left: 1%;
+}
+
+.movie-section {
+  scroll-behavior: smooth;
+}
+
+.movie-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.movie-section::-webkit-scrollbar-track {
+  background-color: #141414;
+}
+
+.movie-section::-webkit-scrollbar-thumb {
+  background-color: #aaaa;
+  border-radius: 10px;
+}
+
+.movie-section::-webkit-scrollbar-thumb:hover {
+  background-color: #cacacaaa;
+}
+
+.titulo {
+  margin-left: 10px;
+}

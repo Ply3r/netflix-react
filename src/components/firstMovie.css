@@ -1,0 +1,74 @@
+.firstMovie-section {
+  align-items: center;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  font-size: 1.5rem;
+  margin-bottom: 3vh;
+}
+
+.information-FirstMovie {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+}
+
+.information-FirstMovie h1 {
+  align-self: center;
+  font-size: 2.5em;
+  margin-bottom: 3vh;
+}
+
+.overview {
+  text-align: justify;
+  margin-bottom: 5vh;
+}
+
+.information-FirstMovie h2 {
+  margin-bottom: 5vh;
+}
+
+.rating {
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: red;
+}
+
+.play-div {
+  width: 40%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.play-button {
+  border: none;
+  width: 250px;
+  height: 250px;
+  font-size: 5rem;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.play-button:hover {
+  width: 255px;
+  height: 255px;
+  font-size: 5.1rem;
+}
+
+.play-button:active {
+  width: 240px;
+  height: 240px;
+  font-size: 4.9rem;
+}
