@@ -1,6 +1,5 @@
 .movie-section {
   width: 100vw;
-  overflow: auto;
   display: flex;
 }
 

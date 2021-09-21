@@ -11,8 +11,7 @@ class MovieSection extends Component {
     const { id } = this.props;
     this.state = {
       movies: '',
-      positionOfArray: 0,
-      array: [`comeco${id}`, `meio${id}`, `fim${id}`],
+      position: 0,
     }
   }
 
@@ -24,20 +23,20 @@ class MovieSection extends Component {
   }
 
   prev() {
-    const { positionOfArray, array } = this.state;
-    if (positionOfArray <= 0) {
-      this.setState({ positionOfArray: array.length - 1 })
+    const { position } = this.state
+    if (position <= 60) {
+      this.setState({ position: 0 })
     } else {
-      this.setState({ positionOfArray: positionOfArray - 1 })
+      this.setState({ position: position - 70 })
     }
   }
 
   next() {
-    const { positionOfArray, array } = this.state;
-    if (positionOfArray >= array.length - 1) {
-      this.setState({ positionOfArray: 0 })
+    const { position } = this.state
+    if (position >= 170) {
+      this.setState({ position: 225 })
     } else {
-      this.setState({ positionOfArray: positionOfArray + 1 })
+      this.setState({ position: position + 70 })
     }
   }
 
@@ -62,36 +61,28 @@ class MovieSection extends Component {
         })
       }
       
-      moviesList = movies.map(({ original_language, vote_average, title, overview, img }, index) => {
-        let arrayContent;
-        if (index === 0) {
-          arrayContent = 'comeco' + id
-        } else if (index === Math.round(movies.length / 2)) {
-          arrayContent = 'meio' + id
-        } else if (index === movies.length - 1) {
-          arrayContent = 'fim' + id
-        }
-        return( <MovieCard 
-          id={arrayContent}
+      moviesList = movies.map(({ original_language, vote_average, title, overview, img }, index) => (    
+        <MovieCard 
           title={title}
           img={img}
           overview={overview}
           vote_average={vote_average}
           original_language={original_language}
-        />)
-      })
+        />
+      ));
     }
-    const { array, positionOfArray } = this.state;
+
+    const { position } = this.state;
 
     return (
       <div className="movie-section-container">
         <h2 className="titulo">{title}</h2>
         <div className="section-container">
-          <a className="button left" href={`#${array[positionOfArray]}`} onClick={this.prev}>ᐸ</a>
-          <section className="movie-section">
+          <button className="button left" onClick={this.prev}>ᐸ</button>
+          <section className="movie-section" style={{right: `${position}%`}}>
             {moviesList}
           </section>
-          <a className="button right" href={`#${array[positionOfArray]}`} onClick={this.next}>ᐳ</a>
+          <button className="button right" onClick={this.next}>ᐳ</button>
         </div>
       </div>
     );
