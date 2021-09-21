@@ -8,7 +8,6 @@ class MovieSection extends Component {
     super(props);
     this.prev = this.prev.bind(this)
     this.next = this.next.bind(this)
-    const { id } = this.props;
     this.state = {
       movies: '',
       position: 0,
