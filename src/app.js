@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Header from './components/header';
-import getTrending from "./getTrending";
 import FirstMovie from "./components/FirstMovie";
 import MovieList from './components/movieList';
 
@@ -19,8 +18,7 @@ class App extends Component {
   }
 
   render() {
-    const { movies, types, search } = this.state;
-    console.log(movies)
+    const { types, search } = this.state;
     return (
       <>
       <Header onClick={this.stateUpdator} />

@@ -21,6 +21,15 @@
   box-shadow: 0 0 1em black;
 }
 
+.button svg{
+  width: 15px;
+}
+
+.button:active {
+  width: 48px;
+  height: 48px;
+}
+
 .right {
   right: 2%;
 }
