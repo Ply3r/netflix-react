@@ -17,7 +17,7 @@ class FirstMovie extends Component {
   }
 
   componentDidMount() {
-    const random = Math.ceil(Math.random() * 20)
+    const random = Math.ceil(Math.random() * 10)
     getFirstMovie(random).then(({ id, original_language, vote_average, title, genre_ids, overview, img }) => {
       this.setState({ title, id, original_language, vote_average, genre_ids, overview, img })
     })
