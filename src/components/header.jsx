@@ -30,7 +30,7 @@ class Header extends Component {
     const { search, types } = this.state;
     return (
       <header>
-        <h1>NETFLIX</h1>
+        <h1><a className="titulo-header" href=".">NETFLIX</a></h1>
         <div className="search-header">
           <Search
             search={search}

@@ -11,8 +11,10 @@ header {
   margin-bottom: 8vh;
 }
 
-header h1 {
+.titulo-header {
+  text-decoration: none;
   color: red;
+  user-select: none;
 }
 
 .search-header {
