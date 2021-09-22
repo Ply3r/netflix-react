@@ -14,8 +14,8 @@ class Header extends Component {
   }
 
   exportSearch() {
-    const { onClick } = this.props;
-    onClick(this.state)
+    const { searchUpdate } = this.props;
+    searchUpdate(this.state)
     this.setState({
       search: '',
     });
@@ -23,6 +23,10 @@ class Header extends Component {
 
   formChange({ target }) {
     const { name, value } = target;
+    if (name === 'types') {
+      const { typeUpdate } = this.props;
+      typeUpdate(value)
+    }
     this.setState({ [name]: value })
   }
 

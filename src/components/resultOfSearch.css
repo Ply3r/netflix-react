@@ -6,8 +6,8 @@
 
 .result-search-grid {
   display: grid;
-  grid-template-columns: repeat(5, 320px);
-  grid-template-rows: repeat(4, 360px);
+  grid-template-columns: repeat(5, 1fr);
+  
   align-content: center;
   align-items: center;
   place-items: center;

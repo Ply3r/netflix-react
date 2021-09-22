@@ -9,12 +9,6 @@
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
 }
 
-.imagem-defalt:hover {
-  height: 370px;
-  width: 320px;
-  z-index: 5;
-}
-
 .imagem-hiden {
   color: white;
   position: fixed;

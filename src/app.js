@@ -7,22 +7,27 @@ import ResultOfSearch from "./components/ResultOfSearch";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.stateUpdator = this.stateUpdator.bind(this);
+    this.searchUpdate = this.searchUpdate.bind(this);
+    this.typeUpdate = this.typeUpdate.bind(this);
     this.state = {
       search: '',
       types: 'All',
     }
   }
 
-  stateUpdator(state) {
-    this.setState(state)
+  searchUpdate({ search }) {
+    this.setState({ search })
+  }
+
+  typeUpdate(types) {
+    this.setState({ types })
   }
 
   render() {
     const { types, search } = this.state;
     return (
       <>
-      <Header onClick={this.stateUpdator} />
+      <Header searchUpdate={this.searchUpdate} typeUpdate={this.typeUpdate} />
       <FirstMovie />
       { types === 'All' && !search ? (
         <MovieList />

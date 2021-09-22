@@ -1,35 +1,69 @@
 import React, { Component } from "react";
 import getSearch from "../Apis_requests/getSearch";
+import getTrending from "../Apis_requests/getTrending";
 import MovieCard from "./movieCard";
 import './resultOfSearch.css';
 
 class ResultOfSearch extends Component {
   constructor(props) {
     super(props);
+    const { query } = this.props;
     this.addItem = this.addItem.bind(this);
+    this.getNewComponent = this.getNewComponent.bind(this)
+    this.updateMovies = this.updateMovies.bind(this)
     this.state = {
+      query,
       page: 1,
+      currentComponent: undefined,
       movies: [],
     }
   }
 
   componentDidMount() {
-    const { page, movies } = this.state;
-    const { query } = this.props;
-    getSearch(query, page)
+    const { query } = this.state;
+    if (query) {
+      this.getNewComponent()
+    } else {
+      this.getNewComponent()
+    }
+  }
+
+  getNewComponent(page = 1) {
+    const { query } = this.props
+    const { movies } = this.state;
+    if ( query ) {
+      getSearch(query, page)
+        .then((arr) => {
+          this.setState({ movies: movies.concat(arr) })
+        })
+    } else {
+      getTrending(page)
+        .then((arr) => {
+          this.setState({ movies: movies.concat(arr) })
+        })
+    }
+  }
+
+  updateMovies() {
+    const { query } = this.props
+    getSearch(query)
       .then((arr) => {
-        this.setState({ movies: movies.concat(arr) })
+        this.setState({ movies: arr })
       })
   }
 
+  shouldComponentUpdate({ query }) {
+    if ( query !== this.state.query) {
+      this.setState({ page: 1, query, currentComponent: undefined, movies: [] })
+      this.updateMovies()
+    }
+    return true;
+  }
+
   addItem() {
-    const { page, movies } = this.state;
-    const { query } = this.props;
+    const { page } = this.state;
     this.setState({ page: page + 1 })
-    getSearch(query, page + 1)
-      .then((arr) => {
-        this.setState({ movies: movies.concat(arr) })
-      })
+    this.getNewComponent(page + 1)
   }
 
   render() {
@@ -37,8 +71,8 @@ class ResultOfSearch extends Component {
     let { movies } = this.state;
     let componentes;
     if (movies.length) {
-      if (types !== 'All') {
-        movies = movies.filter(({ genre_ids }) => genre_ids.includes(types))
+      if (types !== 'All') {       
+        movies = movies.filter(({ genre_ids }) => genre_ids ? genre_ids.includes(parseInt(types)) : '')      
       }
       movies = movies.filter(({ img }) => img)
       componentes = movies.map(({  vote_average, title, overview, img, id }) => (
