@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import MovieCard from "./movieCard";
-import getTrending from "../getTrending";
+import getTrending from "../Apis_requests/getTrending";
 import './movieSection.css'
 
 class MovieSection extends Component {
@@ -44,23 +44,7 @@ class MovieSection extends Component {
     let { movies } = this.state;
     let moviesList;
     if (movies.length) {
-
-      if (types) {
-        if(types !== 'All') {
-          movies = movies.filter(({genre_ids}) => genre_ids.includes(parseInt(types)))
-        }
-      }
-
-      if (search) {
-        const lowerCase = search.toLowerCase() 
-        const regex = new RegExp(lowerCase, 'gm')
-        movies = movies.filter(({ title }) => {
-          title = title.toLowerCase()
-          return regex.test(title)
-        })
-      }
-      
-      moviesList = movies.map(({ original_language, vote_average, title, overview, img }, index) => (    
+      moviesList = movies.map(({ original_language, vote_average, title, overview, img }) => (    
         <MovieCard 
           title={title}
           img={img}

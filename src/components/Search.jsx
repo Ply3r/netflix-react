@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types'
-import getGenres from './../getGenrers'
+import getGenres from '../Apis_requests/getGenrers'
 import './search.css'
 
 class Search extends Component {

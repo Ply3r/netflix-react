@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import getFirstMovie from '../getFirstMovie';
+import getFirstMovie from '../Apis_requests/getFirstMovie';
 import './firstMovie.css'
 
 class FirstMovie extends Component {
@@ -17,7 +17,7 @@ class FirstMovie extends Component {
   }
 
   componentDidMount() {
-    const random = Math.ceil(Math.random() * 10)
+    const random = Math.ceil(Math.random() * 20)
     getFirstMovie(random).then(({ id, original_language, vote_average, title, genre_ids, overview, img }) => {
       this.setState({ title, id, original_language, vote_average, genre_ids, overview, img })
     })

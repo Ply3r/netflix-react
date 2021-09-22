@@ -1,6 +1,24 @@
-.movie-section {
+.movies-sections-container-movielist {
   width: 100vw;
   display: flex;
+  flex-direction: column;
+}
+
+.bot-add-new-films {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  align-self: center;
+  margin-bottom: 5vh;
+}
+
+.bot-add-new-films svg {
+  color: white;
+  width: 7em;
+}
+
+.bot-add-new-films svg:active {
+  width: 6.8em;
 }
 
 h2 {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from './components/header';
 import FirstMovie from "./components/FirstMovie";
 import MovieList from './components/movieList';
+import ResultOfSearch from "./components/ResultOfSearch";
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class App extends Component {
     this.stateUpdator = this.stateUpdator.bind(this);
     this.state = {
       search: '',
-      types: '',
+      types: 'All',
     }
   }
 
@@ -23,10 +24,14 @@ class App extends Component {
       <>
       <Header onClick={this.stateUpdator} />
       <FirstMovie />
-      <MovieList 
-        types={types}
-        search={search}
-      />
+      { types === 'All' && !search ? (
+        <MovieList />
+      ) : (
+        <ResultOfSearch 
+          query={search}
+          types={types}
+        />
+      ) }
       </>
     );
   }
