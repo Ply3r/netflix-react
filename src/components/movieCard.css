@@ -12,8 +12,8 @@
 .imagem-hiden {
   color: white;
   position: fixed;
-  width: 500px;
-  height: 800px;
+  width: 50vh;
+  height: 70vh;
   z-index: 10;
   background-color: #141414;
   border-radius: 30px;
@@ -71,10 +71,11 @@
 .close {
   align-items: flex-end;
   cursor: pointer;
+  font-size: 3rem;
   font-weight: 900;
   user-select: none;
   color: white;
-  text-shadow: 5px 5px black;
+  text-shadow: 3px 3px 10px black;
 }
 
 .imagem-hiden img {
