@@ -73,3 +73,9 @@
   height: 240px;
   font-size: 4.9rem;
 }
+
+@media screen and (max-width: 400px) {
+  .play-button, .information-FirstMovie {
+    display: none;
+  }
+}
