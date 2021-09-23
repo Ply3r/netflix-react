@@ -74,7 +74,7 @@
   font-size: 4.9rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .play-button, .information-FirstMovie {
     display: none;
   }

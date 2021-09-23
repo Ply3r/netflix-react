@@ -86,7 +86,7 @@
   margin-bottom: 5vh;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .imagem-hiden {
     display: flex;
     width: 100%;
