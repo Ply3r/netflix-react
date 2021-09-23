@@ -21,12 +21,7 @@ class ResultOfSearch extends Component {
   }
 
   componentDidMount() {
-    const { query } = this.state;
-    if (query) {
-      this.getNewComponent()
-    } else {
-      this.getNewComponent()
-    }
+    this.getNewComponent()
   }
 
   getNewComponent(page = 1) {
