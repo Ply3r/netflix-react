@@ -84,8 +84,9 @@ class ResultOfSearch extends Component {
     }
 
     let titulo;
-    if (types !== 'All') {
-      console.log(types)
+    if (types !== 'All' && query) {
+      titulo = getGenrers.find((item) => item[0] === parseInt(types))[1] + ' em ' + query
+    } else if (types !== 'All') {
       titulo = getGenrers.find((item) => item[0] === parseInt(types))[1]
     } else {
       titulo = query
